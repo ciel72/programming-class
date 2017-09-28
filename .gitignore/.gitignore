@@ -1,9 +1,0 @@
-#include <stdio.h>
-int main(){ int a[5] = { 90, 78, 66, 85, 95 }; int i;
- printf("合計 %d\n", sumof_a(a, 5)); printf("合計 %d\n", sumof_b(a, 5));
- return 0;}
-int sumof_a(int a[],int size){ int sum = 0; int i;
- for (i = 0; i < size; i++) {  sum += a[i]; }
- return sum;}
-int sumof_b(int *a, int size){ int sum = 0; int i;
- for (i = 0; i < size; i++) {  sum += *(a + i); } return sum;}
