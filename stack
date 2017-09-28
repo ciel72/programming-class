@@ -1,0 +1,13 @@
+#include <stdio.h>#include <stdlib.h>#define bool int#define true 1#define false !true#define STACKSIZE 10
+/* プロトタイプ宣言 */bool push(int data, int *stack, int *top);int pop(int *stack, int *top);int peek(int *stack, int *top);bool is_full(int top);bool is_empty(int top);void print_stack(int *stack, int top);
+int main(void){ int stack[STACKSIZE];  //スタック int top = 0;       //格納先 int *p_top;       //格納先へのポインタ
+ p_top = &top;
+ push(1000, stack, p_top); push(2000, stack, p_top); push(3000, stack, p_top); print_stack(stack, top);
+ pop(stack, p_top); print_stack(stack, top); pop(stack, p_top); print_stack(stack, top); pop(stack, p_top); print_stack(stack, top);
+ return 0;}
+/* 追加 */bool push(int data, int *stack, int *top){/* if (is_full(*top))  return false; else {  stack[*++top] = data;  return true; } */}
+ /* 取出し */ int pop(int *stack, int *top) {/*  if (is_empty(*top))  {   fprintf(stderr, "Error: stack is empty.");   return EXIT_FAILURE;  }  else  {   return stack[*top--];  } */
+  }
+  /* 最上位要素の確認 */  int peek(int *stack, int *top)  {/*   if (is_empty(*top))   {    fprintf(stderr, "Error: stack is empty.");    return stack[*top--];   }   */  }
+   /*   * 満杯?   */   bool is_full(int top)   {    return top == STACKSIZE;   }   /*   * 空？   */   bool is_empty(int top)   {    return top == 0;   }
+   /*   * スタックの表示   */   void print_stack(int *stack, int top)   {    puts(" ");    while (top>0) {     printf("| %d\n", stack[--top]);    }    puts("-+-------");   }
