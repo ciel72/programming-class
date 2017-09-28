@@ -1,0 +1,6 @@
+#include <stdio.h>
+int main(){ int f[11] = { 0, 1 }; int i; int *p;
+ p = f;
+ for (i = 0; i < 9; i++) {  f[i + 2] = *(p + 1) + *p;  p++; }  for (i = 0; i < 11; i++) {  printf("f[%d] = %d\n", i, f[i]);
+ } 
+ return 0;}
